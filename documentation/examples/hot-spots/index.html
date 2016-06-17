@@ -67,7 +67,7 @@
 
     
     <h2>Hot spots</h2>
-    <p>Additional information can be displayed on the panorama using hot spots. The <code>hotSpotDebug</code> parameter exists to assist with locating where to place hot spots.</p>
+    <p>Additional information can be displayed on the panorama using hot spots. The <code>hotSpotDebug</code> parameter exists to assist with locating where to place hot spots; when enabled, it prints the coordinates of mouse clicks to the browser&rsquo;s developer console, which makes it much easier to figure out where to place hot spots.</p>
 
     
     <div id="panorama"></div>
@@ -75,6 +75,13 @@
     pannellum.viewer('panorama', {
     "type": "equirectangular",
     "panorama": "/images/bma-1.jpg",
+    /*
+     * Uncomment the next line to print the coordinates of mouse clicks
+     * to the browser's developer console, which makes it much easier
+     * to figure out where to place hot spots. Always remove it when
+     * finished, though.
+     */
+    //"hotSpotDebug": true,
     "hotSpots": [
         {
             "pitch": 14.1,
@@ -136,6 +143,13 @@
 <span class="nx">pannellum</span><span class="p">.</span><span class="nx">viewer</span><span class="p">(</span><span class="s1">&#39;panorama&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;equirectangular&quot;</span><span class="p">,</span>
     <span class="s2">&quot;panorama&quot;</span><span class="o">:</span> <span class="s2">&quot;/images/bma-1.jpg&quot;</span><span class="p">,</span>
+    <span class="cm">/*</span>
+<span class="cm">     * Uncomment the next line to print the coordinates of mouse clicks</span>
+<span class="cm">     * to the browser&#39;s developer console, which makes it much easier</span>
+<span class="cm">     * to figure out where to place hot spots. Always remove it when</span>
+<span class="cm">     * finished, though.</span>
+<span class="cm">     */</span>
+    <span class="c1">//&quot;hotSpotDebug&quot;: true,</span>
     <span class="s2">&quot;hotSpots&quot;</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">&quot;pitch&quot;</span><span class="o">:</span> <span class="mf">14.1</span><span class="p">,</span>
