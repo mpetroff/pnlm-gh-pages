@@ -4,7 +4,8 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta name="description" content="Additional information can be displayed on the panorama using hot spots. The `hotSpotDebug` parameter exists to assist with locating where to place hot spots; when enabled, it prints the coordinates of mouse clicks to the browser&#39;s developer console, which makes it much easier to figure out where to place hot spots.
+">
 
   <title>Hot spots | Pannellum</title>
 
@@ -19,8 +20,8 @@
   <link rel="stylesheet" href="https://pannellum.org/css/pygments.css">
 
   
-  <link rel="stylesheet" href="https://cdn.pannellum.org/2.2/pannellum.css"/>
-  <script type="text/javascript" src="https://cdn.pannellum.org/2.2/pannellum.js"></script>
+  <link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css"/>
+  <script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
   
 
   
@@ -110,36 +111,36 @@
     
     
     <h3>&lt;iframe&gt;</h3>
-    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;iframe</span> <span class="na">width=</span><span class="s">&quot;600&quot;</span> <span class="na">height=</span><span class="s">&quot;400&quot;</span> <span class="na">allowfullscreen</span> <span class="na">style=</span><span class="s">&quot;border-style:none;&quot;</span> <span class="na">src=</span><span class="s">&quot;https://cdn.pannellum.org/2.2/pannellum.htm?config=https://pannellum.org/configs/hot-spots.json&quot;</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+    <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;600&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;400&quot;</span> <span class="na">allowfullscreen</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border-style:none;&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.pannellum.org/2.3/pannellum.htm?config=https://pannellum.org/configs/hot-spots.json&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div>
 
 
     <h3>Standalone</h3>
-    <a href="https://cdn.pannellum.org/2.2/pannellum.htm?config=https://pannellum.org/configs/hot-spots.json">https://cdn.pannellum.org/2.2/pannellum.htm?config=https://pannellum.org/configs/hot-spots.json</a>
+    <a href="https://cdn.pannellum.org/2.3/pannellum.htm?config=https://pannellum.org/configs/hot-spots.json">https://cdn.pannellum.org/2.3/pannellum.htm#config=https://pannellum.org/configs/hot-spots.json</a>
     
 
     
     <h3>API</h3>
     
     <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Hot spots<span class="nt">&lt;/title&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;https://cdn.pannellum.org/2.2/pannellum.css&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;https://cdn.pannellum.org/2.2/pannellum.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;style&gt;</span>
-    <span class="nf">#panorama</span> <span class="p">{</span>
-        <span class="k">width</span><span class="o">:</span> <span class="m">600px</span><span class="p">;</span>
-        <span class="k">height</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hot spots<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.pannellum.org/2.3/pannellum.css&quot;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.pannellum.org/2.3/pannellum.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="nn">#panorama</span> <span class="p">{</span>
+        <span class="nb">width</span><span class="o">:</span> <span class="m">600px</span><span class="p">;</span>
+        <span class="nb">height</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="nt">&lt;/style&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;panorama&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;script&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;panorama&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="nx">pannellum</span><span class="p">.</span><span class="nx">viewer</span><span class="p">(</span><span class="s1">&#39;panorama&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;equirectangular&quot;</span><span class="p">,</span>
     <span class="s2">&quot;panorama&quot;</span><span class="o">:</span> <span class="s2">&quot;/images/bma-1.jpg&quot;</span><span class="p">,</span>
@@ -172,10 +173,10 @@
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
 
     
@@ -221,6 +222,10 @@
     
       <h5><b>Advanced</b></h5>
       <ul class="list-unstyled">
+        
+          <li><a href="https://pannellum.org/documentation/examples/custom-controls/">Custom controls</a></li>
+        
+          <li><a href="https://pannellum.org/documentation/examples/custom-hot-spots/">Custom hot spots</a></li>
         
           <li><a href="https://pannellum.org/documentation/examples/hot-spots/">Hot spots</a></li>
         

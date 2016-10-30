@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="https://pannellum.org/css/pygments.css">
 
   
-  <link rel="stylesheet" href="https://cdn.pannellum.org/2.2/pannellum.css"/>
-  <script type="text/javascript" src="https://cdn.pannellum.org/2.2/pannellum.js"></script>
+  <link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css"/>
+  <script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
   
 
   
@@ -81,7 +81,8 @@ to be used with the <code>config</code>.</p>
 <h2 id="other-parameters">Other parameters</h2>
 
 <p>A subset of the JSON configuration file options can be used as URL parameters.
-These include <code>panorama</code>, <code>config</code>, <code>author</code>, <code>title</code>, <code>hfov</code>, <code>pitch</code>, <code>yaw</code>,
+These include <code>panorama</code>, <code>config</code>, <code>author</code>, <code>title</code>, <code>hfov</code>, <code>minHfov</code>, <code>maxHfov</code>,
+<code>pitch</code>, <code>minPitch</code>, <code>maxPitch</code>, <code>yaw</code>, <code>minYaw</code>, <code>maxYaw</code>,
 <code>haov</code>, <code>vaov</code>, <code>vOffset</code>, <code>autoLoad</code>, <code>autoRotate</code>, <code>firstScene</code>,
 <code>ignoreGPanoXMP</code>, <code>preview</code>, and <code>fallback</code>.</p>
 
@@ -89,158 +90,205 @@ These include <code>panorama</code>, <code>config</code>, <code>author</code>, <
 
 <h2 id="general-options">General options</h2>
 
-<h3 id="type"><code>type</code></h3>
+<h3 id="type-string"><code>type</code> (string)</h3>
 
 <p>This specifies the panorama type. Can be <code>equirectangular</code>, <code>cubemap</code>, or
 <code>multires</code>. Defaults to <code>equirectangular</code>.</p>
 
-<h3 id="title"><code>title</code></h3>
+<h3 id="title-string"><code>title</code> (string)</h3>
 
 <p>If set, the value is displayed as the panorama&rsquo;s title. If no title is desired,
 don&rsquo;t set this parameter.</p>
 
-<h3 id="author"><code>author</code></h3>
+<h3 id="author-string"><code>author</code> (string)</h3>
 
 <p>If set, the value is displayed as the panorama&rsquo;s author. If no author is
 desired, don&rsquo;t set this parameter.</p>
 
-<h3 id="basepath"><code>basePath</code></h3>
+<h3 id="basepath-string"><code>basePath</code> (string)</h3>
 
 <p>This specifies a base path to load the images from.</p>
 
-<h3 id="autoload"><code>autoLoad</code></h3>
+<h3 id="autoload-boolean"><code>autoLoad</code> (boolean)</h3>
 
 <p>When set to <code>true</code>, the panorama will automatically load. When <code>false</code>, the
 user needs to click on the load button to load the panorama. Defaults to
 <code>false</code>.</p>
 
-<h3 id="autorotate"><code>autoRotate</code></h3>
+<h3 id="autorotate-number"><code>autoRotate</code> (number)</h3>
 
 <p>Setting this parameter causes the panorama to automatically rotate when loaded.
 The value specifies the rotation speed in degrees per second. Positive is
 counter-clockwise, and negative is clockwise.</p>
 
-<h3 id="autorotateinactivitydelay"><code>autoRotateInactivityDelay</code></h3>
+<h3 id="autorotateinactivitydelay-number"><code>autoRotateInactivityDelay</code> (number)</h3>
 
 <p>Sets the delay, in milliseconds, to start automatically rotating the panorama
 after user activity ceases. This parameter only has an effect if the
 <code>autoRotate</code> parameter is set.</p>
 
-<h3 id="autorotatestopdelay"><code>autoRotateStopDelay</code></h3>
+<h3 id="autorotatestopdelay-number"><code>autoRotateStopDelay</code> (number)</h3>
 
 <p>Sets the delay, in milliseconds, to stop automatically rotating the panorama
 after it is loaded. This parameter only has an effect if the <code>autoRotate</code>
 parameter is set.</p>
 
-<h3 id="fallback"><code>fallback</code></h3>
+<h3 id="fallback-string"><code>fallback</code> (string)</h3>
 
 <p>If set, the value is used as a URL for a fallback viewer in case Pannellum is
 not supported by the user&rsquo;s device. The user will be given the option to click
 a link and visit this URL if Pannellum fails to work.</p>
 
-<h3 id="showzoomctrl"><code>showZoomCtrl</code></h3>
+<h3 id="orientationonbydefault-boolean"><code>orientationOnByDefault</code> (boolean)</h3>
+
+<p>If set to <code>true</code>, device orientation control will be used when the panorama is
+loaded, if the device supports it. If false, device orientation control needs
+to be activated by pressing a button. Defaults to <code>false</code>.</p>
+
+<h3 id="showzoomctrl-boolean"><code>showZoomCtrl</code> (boolean)</h3>
 
 <p>If set to <code>false</code>, the zoom controls will not be displayed. Defaults to <code>true</code>.</p>
 
-<h3 id="keyboardzoom"><code>keyboardZoom</code></h3>
+<h3 id="keyboardzoom-boolean"><code>keyboardZoom</code> (boolean)</h3>
 
 <p>If set to <code>false</code>, zooming with keyboard will be disabled. Defaults to <code>true</code>.</p>
 
-<h3 id="showfullscreenctrl"><code>showFullscreenCtrl</code></h3>
+<h3 id="mousezoom-boolean"><code>mouseZoom</code> (boolean)</h3>
+
+<p>If set to <code>false</code>, zooming with mouse wheel will be disabled. Defaults to <code>true</code>.</p>
+
+<h3 id="showfullscreenctrl-boolean"><code>showFullscreenCtrl</code> (boolean)</h3>
 
 <p>If set to <code>false</code>, the fullscreen control will not be displayed. Defaults to
 <code>true</code>. The fullscreen button will only be displayed if the browser supports
 the fullscreen API.</p>
 
-<h3 id="yaw"><code>yaw</code></h3>
+<h3 id="showcontrols-boolean"><code>showControls</code> (boolean)</h3>
+
+<p>If set to <code>false</code>, no controls are displayed. Defaults to <code>true</code>.</p>
+
+<h3 id="yaw-number"><code>yaw</code> (number)</h3>
 
 <p>Sets the panorama&rsquo;s starting yaw position in degrees. Defaults to <code>0</code>.</p>
 
-<h3 id="pitch"><code>pitch</code></h3>
+<h3 id="pitch-number"><code>pitch</code> (number)</h3>
 
 <p>Sets the panorama&rsquo;s starting pitch position in degrees. Defaults to <code>0</code>.</p>
 
-<h3 id="hfov"><code>hfov</code></h3>
+<h3 id="hfov-number"><code>hfov</code> (number)</h3>
 
 <p>Sets the panorama&rsquo;s starting horizontal field of view in degrees. Defaults to
 <code>100</code>.</p>
 
-<h3 id="minyaw-and-maxyaw"><code>minYaw</code> and <code>maxYaw</code></h3>
+<h3 id="minyaw-and-maxyaw-number"><code>minYaw</code> and <code>maxYaw</code> (number)</h3>
 
-<p>Sets the minimum / maximum yaw the viewer can be centered at, in degrees.
-Defaults to <code>-360</code> / <code>360</code>, i.e. no limit.</p>
+<p>Sets the minimum / maximum yaw the viewer edge can be at, in degrees.
+Defaults to <code>-180</code> / <code>180</code>, i.e. no limit.</p>
 
-<h3 id="minpitch-and-maxpitch"><code>minPitch</code> and <code>maxPitch</code></h3>
+<h3 id="minpitch-and-maxpitch-number"><code>minPitch</code> and <code>maxPitch</code> (number)</h3>
 
-<p>Sets the minimum / maximum pitch the viewer can be centered at, in degrees.
-Defaults to <code>-85</code> / <code>85</code>.</p>
+<p>Sets the minimum / maximum pitch the viewer edge can be at, in degrees.
+Defaults to <code>undefined</code>, so the viewer center can reach <code>-90</code> / <code>90</code>.</p>
 
-<h3 id="minhfov-and-maxhfov"><code>minHfov</code> and <code>maxHfov</code></h3>
+<h3 id="minhfov-and-maxhfov-number"><code>minHfov</code> and <code>maxHfov</code> (number)</h3>
 
 <p>Sets the minimum / maximum horizontal field of view, in degrees, that the
 viewer can be set to. Defaults to <code>50</code> / <code>120</code>.</p>
 
-<h3 id="compass"><code>compass</code></h3>
+<h3 id="compass-boolean"><code>compass</code> (boolean)</h3>
 
-<p>If <code>true</code>, a compass is displayed. Defaults to <code>false</code>.</p>
+<p>If <code>true</code>, a compass is displayed. Normally defaults to <code>false</code>; defaults to
+<code>true</code> if heading information is present in Photo Sphere XMP metadata.</p>
 
-<h3 id="northoffset"><code>northOffset</code></h3>
+<h3 id="northoffset-number"><code>northOffset</code> (number)</h3>
 
 <p>Set the offset, in degrees, of the center of the panorama from North. As this
 affects the compass, it only has an effect if <code>compass</code> is set to <code>true</code>.</p>
 
-<h3 id="preview"><code>preview</code></h3>
+<h3 id="preview-string"><code>preview</code> (string)</h3>
 
 <p>Specifies a URL for a preview image to display before the panorama is loaded.</p>
 
-<h3 id="hotspots"><code>hotSpots</code></h3>
+<h3 id="horizonpitch-and-horizonroll-number"><code>horizonPitch</code> and <code>horizonRoll</code> (number)</h3>
+
+<p>Specifies pitch / roll of image horizon, in degrees (for correcting
+non-leveled panoramas).</p>
+
+<h3 id="hotspots-array"><code>hotSpots</code> (array)</h3>
 
 <p>This specifies an array of hot spots that can be links to other scenes,
 information, or external links. Each array element has the following properties.</p>
 
-<h4 id="pitch-1"><code>pitch</code></h4>
+<h4 id="pitch-number-1"><code>pitch</code> (number)</h4>
 
-<p>Specifies the pitch portion of the hot spot&rsquo;s location.</p>
+<p>Specifies the pitch portion of the hot spot&rsquo;s location, in degrees.</p>
 
-<h4 id="yaw-1"><code>yaw</code></h4>
+<h4 id="yaw-number-1"><code>yaw</code> (number)</h4>
 
-<p>Specifies the yaw portion of the hot spot&rsquo;s location.</p>
+<p>Specifies the yaw portion of the hot spot&rsquo;s location, in degrees.</p>
 
-<h4 id="type-1"><code>type</code></h4>
+<h4 id="type-string-1"><code>type</code> (string)</h4>
 
 <p>Specifies the type of the hot spot. Can be <code>scene</code> for scene links or <code>info</code>
 for information hot spots. A tour configuration file is required for <code>scene</code>
 hot spots.</p>
 
-<h4 id="text"><code>text</code></h4>
+<h4 id="text-string"><code>text</code> (string)</h4>
 
 <p>This specifies the text that is displayed when the user hovers over the hot
 spot.</p>
 
-<h4 id="url"><code>URL</code></h4>
+<h4 id="url-string"><code>URL</code> (string)</h4>
 
 <p>If specified for an <code>info</code> hot spot, the hot spot links to the specified URL.
 Not applicable for <code>scene</code> hot spots.</p>
 
-<h4 id="sceneid"><code>sceneId</code></h4>
+<h4 id="sceneid-string"><code>sceneId</code> (string)</h4>
 
 <p>Specifies the ID of the scene to link to for <code>scene</code> hot spots. Not applicable
 for <code>info</code> hot spots.</p>
 
-<h4 id="targetpitch"><code>targetPitch</code></h4>
+<h4 id="targetpitch-number"><code>targetPitch</code> (number)</h4>
 
-<p>Specifies the pitch of the target scene.</p>
+<p>Specifies the pitch of the target scene, in degrees. Can also be set to <code>same</code>,
+which uses the current pitch of the current scene as the initial pitch of the
+target scene.</p>
 
-<h4 id="targetyaw"><code>targetYaw</code></h4>
+<h4 id="targetyaw-number"><code>targetYaw</code> (number)</h4>
 
-<p>Specifies the yaw of the target scene.</p>
+<p>Specifies the yaw of the target scene, in degrees. Can also be set to <code>same</code> or
+<code>sameAzimuth</code>. These settings use the current yaw of the current scene as the
+initial yaw of the target scene; <code>same</code> uses the current yaw directly, while
+<code>sameAzimuth</code> takes into account the <code>northOffset</code> values of both scenes to
+maintain the same direction with regard to north.</p>
 
-<h3 id="hotspotdebug"><code>hotSpotDebug</code></h3>
+<h4 id="targethfov-number"><code>targetHfov</code> (number)</h4>
+
+<p>Specifies the HFOV of the target scene, in degrees.</p>
+
+<h4 id="cssclass-string"><code>cssClass</code> (string)</h4>
+
+<p>If specified, string is used as the CSS class for the hot spot instead of the
+default CSS classes.</p>
+
+<h4 id="createtooltipfunc-function-and-createtooltipargs-object"><code>createTooltipFunc</code> (function) and <code>createTooltipArgs</code> (object)</h4>
+
+<p>If <code>createTooltipFunc</code> is specified, this function is used to create the hot
+spot tooltip DOM instead of the default function. The contents of
+<code>createTooltipArgs</code> are passed to the function as arguments.</p>
+
+<h4 id="clickhandlerfunc-function-and-clickhandlerargs-object"><code>clickHandlerFunc</code> (function) and <code>clickHandlerArgs</code> (object)</h4>
+
+<p>If <code>clickHandlerFunc</code> is specified, this function is added as an event handler
+for the hot spot&rsquo;s <code>click</code> event. The event object and the contents of
+<code>clickHandlerArgs</code> are passed to the function as arguments.</p>
+
+<h3 id="hotspotdebug-boolean"><code>hotSpotDebug</code> (boolean)</h3>
 
 <p>When <code>true</code>, the mouse pointer&rsquo;s pitch and yaw are logged to the console when
 the mouse button is clicked. Defaults to <code>false</code>.</p>
 
-<h3 id="scenefadeduration"><code>sceneFadeDuration</code></h3>
+<h3 id="scenefadeduration-number"><code>sceneFadeDuration</code> (number)</h3>
 
 <p>Specifies the fade duration, in milliseconds, when transitioning between
 scenes. Not defined by default. Only applicable for tours. Only works with
@@ -248,34 +296,39 @@ WebGL renderer.</p>
 
 <h2 id="equirectangular-specific-options"><code>equirectangular</code> specific options</h2>
 
-<h3 id="panorama"><code>panorama</code></h3>
+<h3 id="panorama-string"><code>panorama</code> (string)</h3>
 
 <p>Sets the URL to the equirectangular panorama image. This is relative to
 <code>basePath</code> if it is set, else it is relative to the location of
 <code>pannellum.htm</code>. An absolute URL can also be used.</p>
 
-<h3 id="haov"><code>haov</code></h3>
+<h3 id="haov-number"><code>haov</code> (number)</h3>
 
 <p>Sets the panorama&rsquo;s horizontal angle of view, in degrees. Defaults to <code>360</code>.
 This is used if the equirectangular image does not cover a full 360 degrees in
 the horizontal.</p>
 
-<h3 id="vaov"><code>vaov</code></h3>
+<h3 id="vaov-number"><code>vaov</code> (number)</h3>
 
 <p>Sets the panorama&rsquo;s vertical angle of view, in degrees. Defaults to <code>180</code>. This
 is used if the equirectangular image does not cover a full 180 degrees in the
 vertical.</p>
 
-<h3 id="voffset"><code>vOffset</code></h3>
+<h3 id="voffset-number"><code>vOffset</code> (number)</h3>
 
 <p>Sets the vertical offset of the center of the equirectangular image from the
 horizon, in degrees. Defaults to <code>0</code>. This is used if <code>vaov</code> is less than <code>180</code>
 and the equirectangular image is not cropped symmetrically.</p>
 
-<h3 id="ignoregpanoxmp"><code>ignoreGPanoXMP</code></h3>
+<h3 id="ignoregpanoxmp-boolean"><code>ignoreGPanoXMP</code> (boolean)</h3>
 
 <p>If set to <code>true</code>, any embedded Photo Sphere XMP data will be ignored; else,
 said data will override any existing settings. Defaults to <code>false</code>.</p>
+
+<h3 id="backgroundcolor-number-number-number"><code>backgroundColor</code> ([number, number, number])</h3>
+
+<p>Specifies an array containing RGB values [0, 1] that sets the background color
+shown past the edges of a partial panorama. Defaults to <code>[0, 0, 0]</code> (black).</p>
 
 <h2 id="cubemap-specific-options"><code>cubemap</code> specific options</h2>
 
@@ -292,39 +345,39 @@ used.</p>
 
 <p>This contains information about the multiresolution panorama in sub-keys.</p>
 
-<h4 id="basepath-1"><code>basePath</code></h4>
+<h4 id="basepath-string-1"><code>basePath</code> (string)</h4>
 
 <p>This is the base path of the URLs for the multiresolution tiles. It is relative
 to the regular <code>basePath</code> option if it is defined, else it is relative to the
 location of <code>pannellum.htm</code>. An absolute URL can also be used.</p>
 
-<h4 id="path"><code>path</code></h4>
+<h4 id="path-string"><code>path</code> (string)</h4>
 
 <p>This is a format string for the location of the multiresolution tiles, relative
 to <code>multiRes.basePath</code>, which is relative to <code>basePath</code>. Format parameters are
 <code>%l</code> for the zoom level, <code>%s</code> for the cube face, <code>%x</code> for the x index, and
 <code>%y</code> for the y index. For each tile, <code>.extension</code> is appended.</p>
 
-<h4 id="fallbackpath"><code>fallbackPath</code></h4>
+<h4 id="fallbackpath-string"><code>fallbackPath</code> (string)</h4>
 
 <p>This is a format string for the location of the fallback tiles for the CSS 3D
 transform-based renderer if the WebGL renderer is not supported, relative
 to <code>multiRes.basePath</code>, which is relative to <code>basePath</code>. The only format
 parameter is <code>%s</code>, for the cube face. For each face, <code>.extension</code> is appended.</p>
 
-<h4 id="extension"><code>extension</code></h4>
+<h4 id="extension-string"><code>extension</code> (string)</h4>
 
 <p>Specifies the tiles&rsquo; file extension. Do not include the <code>.</code>.</p>
 
-<h4 id="tileresolution"><code>tileResolution</code></h4>
+<h4 id="tileresolution-number"><code>tileResolution</code> (number)</h4>
 
 <p>This specifies the size in pixels of each image tile.</p>
 
-<h4 id="maxlevel"><code>maxLevel</code></h4>
+<h4 id="maxlevel-number"><code>maxLevel</code> (number)</h4>
 
 <p>This specifies the maximum zoom level.</p>
 
-<h4 id="cuberesolution"><code>cubeResolution</code></h4>
+<h4 id="cuberesolution-number"><code>cubeResolution</code> (number)</h4>
 
 <p>This specifies the size in pixels of the full resolution cube faces the image
 tiles were created from.</p>
@@ -333,7 +386,7 @@ tiles were created from.</p>
 
 <p>Currently, only equirectangular dynamic content is supported.</p>
 
-<h3 id="dynamic"><code>dynamic</code></h3>
+<h3 id="dynamic-boolean"><code>dynamic</code> (boolean)</h3>
 
 <p>The panorama source is considered dynamic when this is set to <code>true</code>. Defaults
 to <code>false</code>. This should be set to <code>true</code> for video.</p>
@@ -348,6 +401,34 @@ the scene ID for the first scene to be displayed. The <code>scenes</code> proper
 contains a dictionary of scenes, specified by scene IDs. The values assigned to
 these IDs are specific to each scene.</p>
 
+<h1 id="api-events">API Events</h1>
+
+<h2 id="load"><code>load</code></h2>
+
+<p>Fired when a panorama finishes loading.</p>
+
+<h2 id="scenechange"><code>scenechange</code></h2>
+
+<p>Fired when a scene change is initiated. A <code>load</code> event will be fired when the
+new scene finishes loading. Passes scene ID string to handler.</p>
+
+<h2 id="error"><code>error</code></h2>
+
+<p>Fired when an error occured. The error message string is passed to the
+event listener.</p>
+
+<h2 id="errorcleared"><code>errorcleared</code></h2>
+
+<p>Fired when an error is cleared.</p>
+
+<h2 id="mousedown"><code>mousedown</code></h2>
+
+<p>Fired when the mouse button is pressed. Passes <code>MouseEvent</code> to handler.</p>
+
+<h2 id="mouseup"><code>mouseup</code></h2>
+
+<p>Fired when the mouse button is released. Passes <code>MouseEvent</code> to handler.</p>
+
   </div>
   <div class="col-sm-3 col-sm-pull-9">
     <h4>
@@ -356,6 +437,7 @@ these IDs are specific to each scene.</p>
     <ul class="list-unstyled">
       <li><a href="https://pannellum.org/documentation/reference/#url-configuration-parameters">URL Configuration Parameters</a></li>
       <li><a href="https://pannellum.org/documentation/reference/#json-configuration-file-options">JSON Configuration File Options</a></li>
+      <li><a href="https://pannellum.org/documentation/reference/#api-events">API Events</a></li>
     </ul>
   </div>
 </div>

@@ -3,7 +3,6 @@
   
   <url>
     <loc>https://pannellum.org/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -28,6 +27,14 @@
   
   <url>
     <loc>https://pannellum.org/documentation/examples/cube-map/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/custom-controls/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pannellum.org/documentation/examples/custom-hot-spots/</loc>
   </url>
   
   <url>

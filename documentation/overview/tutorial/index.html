@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="https://pannellum.org/css/pygments.css">
 
   
-  <link rel="stylesheet" href="https://cdn.pannellum.org/2.2/pannellum.css"/>
-  <script type="text/javascript" src="https://cdn.pannellum.org/2.2/pannellum.js"></script>
+  <link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css"/>
+  <script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
   
 
   
@@ -158,8 +158,8 @@ document.getElementById('form').addEventListener('submit', function(e) {
     e.preventDefault();
     
     var form = document.form;
-    var url = 'https:\/\/cdn.pannellum.org/2.2/pannellum.htm' +
-        '?panorama=' + escape(form.pano_url.value);
+    var url = 'https:\/\/cdn.pannellum.org/2.3/pannellum.htm' +
+        '#panorama=' + escape(form.pano_url.value);
     if (form.pano_url.value.slice(0, 7) == 'http://')
         url = 'http' + url.slice(5)
     if(form.pano_title.value != '')
