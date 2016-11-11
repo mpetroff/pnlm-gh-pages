@@ -162,114 +162,113 @@ function hotspot(hotSpotDiv, args) {
 </script>
 
 <h3 id="api">API</h3>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Custom hot spots<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.pannellum.org/2.3/pannellum.css&quot;</span><span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.pannellum.org/2.3/pannellum.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Custom hot spots</title>
+    <link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
 
-    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-    <span class="nn">#panorama</span> <span class="p">{</span>
-        <span class="nb">width</span><span class="o">:</span> <span class="m">600px</span><span class="p">;</span>
-        <span class="nb">height</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nc">.custom-hotspot</span> <span class="p">{</span>
-        <span class="nb">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span>
-        <span class="nb">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span>
-        <span class="nb">background</span><span class="o">:</span> <span class="m">#f00</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nt">div</span><span class="nc">.custom-tooltip</span> <span class="nt">span</span> <span class="p">{</span>
-        <span class="nb">visibility</span><span class="o">:</span> <span class="nb">hidden</span><span class="p">;</span>
-        <span class="nb">position</span><span class="o">:</span> <span class="nb">absolute</span><span class="p">;</span>
-        <span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
-        <span class="nb">background-color</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
-        <span class="nb">color</span><span class="o">:</span> <span class="m">#000</span><span class="p">;</span>
-        <span class="nb">text-align</span><span class="o">:</span> <span class="nb">center</span><span class="p">;</span>
-        <span class="nb">max-width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
-        <span class="nb">padding</span><span class="o">:</span> <span class="m">5px</span> <span class="m">10px</span><span class="p">;</span>
-        <span class="nb">margin-left</span><span class="o">:</span> <span class="m">-220px</span><span class="p">;</span>
-        <span class="nb">cursor</span><span class="o">:</span> <span class="nb">default</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nt">div</span><span class="nc">.custom-tooltip</span><span class="nd">:hover</span> <span class="nt">span</span><span class="p">{</span>
-        <span class="nb">visibility</span><span class="o">:</span> <span class="nb">visible</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nt">div</span><span class="nc">.custom-tooltip</span><span class="nd">:hover</span> <span class="nt">span</span><span class="nd">:after</span> <span class="p">{</span>
-        <span class="nb">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-        <span class="nb">position</span><span class="o">:</span> <span class="nb">absolute</span><span class="p">;</span>
-        <span class="nb">width</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-        <span class="nb">height</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-        <span class="nb">border-width</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
-        <span class="nb">border-style</span><span class="o">:</span> <span class="nb">solid</span><span class="p">;</span>
-        <span class="nb">border-color</span><span class="o">:</span> <span class="m">#fff</span> <span class="nb">transparent</span> <span class="nb">transparent</span> <span class="nb">transparent</span><span class="p">;</span>
-        <span class="nb">bottom</span><span class="o">:</span> <span class="m">-20px</span><span class="p">;</span>
-        <span class="nb">left</span><span class="o">:</span> <span class="m">-10px</span><span class="p">;</span>
-        <span class="nb">margin</span><span class="o">:</span> <span class="m">0</span> <span class="m">50%</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <style>
+    #panorama {
+        width: 600px;
+        height: 400px;
+    }
+    .custom-hotspot {
+        height: 50px;
+        width: 50px;
+        background: #f00;
+    }
+    div.custom-tooltip span {
+        visibility: hidden;
+        position: absolute;
+        border-radius: 3px;
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+        max-width: 200px;
+        padding: 5px 10px;
+        margin-left: -220px;
+        cursor: default;
+    }
+    div.custom-tooltip:hover span{
+        visibility: visible;
+    }
+    div.custom-tooltip:hover span:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-width: 10px;
+        border-style: solid;
+        border-color: #fff transparent transparent transparent;
+        bottom: -20px;
+        left: -10px;
+        margin: 0 50%;
+    }
+    </style>
+</head>
+<body>
 
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;panorama&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;controls&quot;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;pan-up&quot;</span><span class="p">&gt;</span>▲<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;pan-down&quot;</span><span class="p">&gt;</span>▼<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;pan-left&quot;</span><span class="p">&gt;</span>◀<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;pan-right&quot;</span><span class="p">&gt;</span>▶<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;zoom-in&quot;</span><span class="p">&gt;</span>+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;zoom-out&quot;</span><span class="p">&gt;</span>−<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fullscreen&quot;</span><span class="p">&gt;</span>⤢<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div id="panorama">
+    <div id="controls">
+        <div class="ctrl" id="pan-up">▲</div>
+        <div class="ctrl" id="pan-down">▼</div>
+        <div class="ctrl" id="pan-left">◀</div>
+        <div class="ctrl" id="pan-right">▶</div>
+        <div class="ctrl" id="zoom-in">+</div>
+        <div class="ctrl" id="zoom-out">−</div>
+        <div class="ctrl" id="fullscreen">⤢</div>
+    </div>
+</div>
 
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;panorama&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div id="panorama"></div>
 
-<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<span class="c1">// Create viewer</span>
-<span class="nx">viewer</span> <span class="o">=</span> <span class="nx">pannellum</span><span class="p">.</span><span class="nx">viewer</span><span class="p">(</span><span class="s1">&#39;panorama&#39;</span><span class="p">,</span> <span class="err">﻿</span><span class="p">{</span>
-    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;equirectangular&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;panorama&quot;</span><span class="o">:</span> <span class="s2">&quot;/images/bma-1.jpg&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;hotSpots&quot;</span><span class="o">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;pitch&quot;</span><span class="o">:</span> <span class="mf">14.1</span><span class="p">,</span>
-            <span class="s2">&quot;yaw&quot;</span><span class="o">:</span> <span class="mf">1.5</span><span class="p">,</span>
-            <span class="s2">&quot;cssClass&quot;</span><span class="o">:</span> <span class="s2">&quot;custom-hotspot&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;createTooltipFunc&quot;</span><span class="o">:</span> <span class="nx">hotspot</span><span class="p">,</span>
-            <span class="s2">&quot;createTooltipArgs&quot;</span><span class="o">:</span> <span class="s2">&quot;Baltimore Museum of Art&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;pitch&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mf">9.4</span><span class="p">,</span>
-            <span class="s2">&quot;yaw&quot;</span><span class="o">:</span> <span class="mf">222.6</span><span class="p">,</span>
-            <span class="s2">&quot;cssClass&quot;</span><span class="o">:</span> <span class="s2">&quot;custom-hotspot&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;createTooltipFunc&quot;</span><span class="o">:</span> <span class="nx">hotspot</span><span class="p">,</span>
-            <span class="s2">&quot;createTooltipArgs&quot;</span><span class="o">:</span> <span class="s2">&quot;Art Museum Drive&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;pitch&quot;</span><span class="o">:</span> <span class="o">-</span><span class="mf">0.9</span><span class="p">,</span>
-            <span class="s2">&quot;yaw&quot;</span><span class="o">:</span> <span class="mf">144.4</span><span class="p">,</span>
-            <span class="s2">&quot;cssClass&quot;</span><span class="o">:</span> <span class="s2">&quot;custom-hotspot&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;createTooltipFunc&quot;</span><span class="o">:</span> <span class="nx">hotspot</span><span class="p">,</span>
-            <span class="s2">&quot;createTooltipArgs&quot;</span><span class="o">:</span> <span class="s2">&quot;North Charles Street&quot;</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">});</span>
+<script>
+// Create viewer
+viewer = pannellum.viewer('panorama', ﻿{
+    "type": "equirectangular",
+    "panorama": "/images/bma-1.jpg",
+    "hotSpots": [
+        {
+            "pitch": 14.1,
+            "yaw": 1.5,
+            "cssClass": "custom-hotspot",
+            "createTooltipFunc": hotspot,
+            "createTooltipArgs": "Baltimore Museum of Art"
+        },
+        {
+            "pitch": -9.4,
+            "yaw": 222.6,
+            "cssClass": "custom-hotspot",
+            "createTooltipFunc": hotspot,
+            "createTooltipArgs": "Art Museum Drive"
+        },
+        {
+            "pitch": -0.9,
+            "yaw": 144.4,
+            "cssClass": "custom-hotspot",
+            "createTooltipFunc": hotspot,
+            "createTooltipArgs": "North Charles Street"
+        }
+    ]
+});
 
-<span class="c1">// Hot spot creation function</span>
-<span class="kd">function</span> <span class="nx">hotspot</span><span class="p">(</span><span class="nx">hotSpotDiv</span><span class="p">,</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">hotSpotDiv</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;custom-tooltip&#39;</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">span</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">);</span>
-    <span class="nx">span</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">args</span><span class="p">;</span>
-    <span class="nx">hotSpotDiv</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">span</span><span class="p">);</span>
-    <span class="nx">span</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">span</span><span class="p">.</span><span class="nx">scrollWidth</span> <span class="o">-</span> <span class="mi">20</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
-    <span class="nx">span</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">marginLeft</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="nx">span</span><span class="p">.</span><span class="nx">scrollWidth</span> <span class="o">-</span> <span class="nx">hotSpotDiv</span><span class="p">.</span><span class="nx">offsetWidth</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
-    <span class="nx">span</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">marginTop</span> <span class="o">=</span> <span class="o">-</span><span class="nx">span</span><span class="p">.</span><span class="nx">scrollHeight</span> <span class="o">-</span> <span class="mi">12</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+// Hot spot creation function
+function hotspot(hotSpotDiv, args) {
+    hotSpotDiv.classList.add('custom-tooltip');
+    var span = document.createElement('span');
+    span.innerHTML = args;
+    hotSpotDiv.appendChild(span);
+    span.style.width = span.scrollWidth - 20 + 'px';
+    span.style.marginLeft = -(span.scrollWidth - hotSpotDiv.offsetWidth) / 2 + 'px';
+    span.style.marginTop = -span.scrollHeight - 12 + 'px';
+}
+</script>
 
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
+</body>
+</html>
 
   </div>
   <div class="col-sm-3 col-sm-pull-9">
@@ -335,7 +334,7 @@ function hotspot(hotSpotDiv, args) {
 </div>
 
 <div class="mastfoot text-center">
-   <p>Pannellum is developed on <a href="https://github.com/mpetroff/pannellum">GitHub</a> by <a href="https://mpetroff.net/">Matthew Petroff</a>.</p>
+   <p>Pannellum is developed on <a href="https://github.com/mpetroff/pannellum">GitHub</a> by <a href="https://mpetroff.net/">Matthew Petroff</a>.<br>CDN via <a href="https://www.keycdn.com/">KeyCDN</a>.</p>
 </div>
 
 </body>
