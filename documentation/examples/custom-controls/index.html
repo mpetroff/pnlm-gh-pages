@@ -149,87 +149,88 @@ document.getElementById('fullscreen').addEventListener('click', function(e) {
 </script>
 
 <h3 id="api">API</h3>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Custom controls</title>
-    <link rel="stylesheet" href="https://cdn.pannellum.org/2.3/pannellum.css"/>
-    <script type="text/javascript" src="https://cdn.pannellum.org/2.3/pannellum.js"></script>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Custom controls<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.pannellum.org/2.3/pannellum.css&quot;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.pannellum.org/2.3/pannellum.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
-    <style>
-    #panorama {
-        width: 600px;
-        height: 400px;
-    }
-    #controls {
-        position: absolute;
-        bottom: 0;
-        z-index: 2;
-        text-align: center;
-        width: 100%;
-        padding-bottom: 3px;
-    }
-    .ctrl {
-        padding: 8px 5px;
-        width: 30px;
-        text-align: center;
-        background: rgba(200, 200, 200, 0.8);
-        display: inline-block;
-    }
-    .ctrl:hover {
-        background: rgba(200, 200, 200, 1);
-    }
-    </style>
-</head>
-<body>
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="nn">#panorama</span> <span class="p">{</span>
+        <span class="nb">width</span><span class="o">:</span> <span class="m">600px</span><span class="p">;</span>
+        <span class="nb">height</span><span class="o">:</span> <span class="m">400px</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nn">#controls</span> <span class="p">{</span>
+        <span class="nb">position</span><span class="o">:</span> <span class="nb">absolute</span><span class="p">;</span>
+        <span class="nb">bottom</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="nb">z-index</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span>
+        <span class="nb">text-align</span><span class="o">:</span> <span class="nb">center</span><span class="p">;</span>
+        <span class="nb">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+        <span class="nb">padding-bottom</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.ctrl</span> <span class="p">{</span>
+        <span class="nb">padding</span><span class="o">:</span> <span class="m">8px</span> <span class="m">5px</span><span class="p">;</span>
+        <span class="nb">width</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+        <span class="nb">text-align</span><span class="o">:</span> <span class="nb">center</span><span class="p">;</span>
+        <span class="nb">background</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">200</span><span class="o">,</span> <span class="m">200</span><span class="o">,</span> <span class="m">200</span><span class="o">,</span> <span class="m">0</span><span class="o">.</span><span class="m">8</span><span class="p">);</span>
+        <span class="nb">display</span><span class="o">:</span> <span class="nb">inline</span><span class="o">-</span><span class="nb">block</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.ctrl</span><span class="nd">:hover</span> <span class="p">{</span>
+        <span class="nb">background</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">200</span><span class="o">,</span> <span class="m">200</span><span class="o">,</span> <span class="m">200</span><span class="o">,</span> <span class="m">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 
-<div id="panorama">
-    <div id="controls">
-        <div class="ctrl" id="pan-up">▲</div>
-        <div class="ctrl" id="pan-down">▼</div>
-        <div class="ctrl" id="pan-left">◀</div>
-        <div class="ctrl" id="pan-right">▶</div>
-        <div class="ctrl" id="zoom-in">+</div>
-        <div class="ctrl" id="zoom-out">−</div>
-        <div class="ctrl" id="fullscreen">⤢</div>
-    </div>
-</div>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;panorama&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;controls&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;pan-up&quot;</span><span class="p">&gt;</span>▲<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;pan-down&quot;</span><span class="p">&gt;</span>▼<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;pan-left&quot;</span><span class="p">&gt;</span>◀<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;pan-right&quot;</span><span class="p">&gt;</span>▶<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;zoom-in&quot;</span><span class="p">&gt;</span>+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;zoom-out&quot;</span><span class="p">&gt;</span>−<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ctrl&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;fullscreen&quot;</span><span class="p">&gt;</span>⤢<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-<script>
-// Create viewer
-viewer = pannellum.viewer('panorama', ﻿{
-    "panorama": "/images/alma-correlator-facility.jpg",
-    "autoLoad": true,
-    "showControls": false
-});
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="c1">// Create viewer</span>
+<span class="nx">viewer</span> <span class="o">=</span> <span class="nx">pannellum</span><span class="p">.</span><span class="nx">viewer</span><span class="p">(</span><span class="s1">&#39;panorama&#39;</span><span class="p">,</span> <span class="err">﻿</span><span class="p">{</span>
+    <span class="s2">&quot;panorama&quot;</span><span class="o">:</span> <span class="s2">&quot;/images/alma-correlator-facility.jpg&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;autoLoad&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;showControls&quot;</span><span class="o">:</span> <span class="kc">false</span>
+<span class="p">});</span>
 
-// Make buttons work
-document.getElementById('pan-up').addEventListener('click', function(e) {
-    viewer.setPitch(viewer.getPitch() + 10);
-});
-document.getElementById('pan-down').addEventListener('click', function(e) {
-    viewer.setPitch(viewer.getPitch() - 10);
-});
-document.getElementById('pan-left').addEventListener('click', function(e) {
-    viewer.setYaw(viewer.getYaw() - 10);
-});
-document.getElementById('pan-right').addEventListener('click', function(e) {
-    viewer.setYaw(viewer.getYaw() + 10);
-});
-document.getElementById('zoom-in').addEventListener('click', function(e) {
-    viewer.setHfov(viewer.getHfov() - 10);
-});
-document.getElementById('zoom-out').addEventListener('click', function(e) {
-    viewer.setHfov(viewer.getHfov() + 10);
-});
-document.getElementById('fullscreen').addEventListener('click', function(e) {
-    viewer.toggleFullscreen();
-});
-</script>
+<span class="c1">// Make buttons work</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;pan-up&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">viewer</span><span class="p">.</span><span class="nx">setPitch</span><span class="p">(</span><span class="nx">viewer</span><span class="p">.</span><span class="nx">getPitch</span><span class="p">()</span> <span class="o">+</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;pan-down&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">viewer</span><span class="p">.</span><span class="nx">setPitch</span><span class="p">(</span><span class="nx">viewer</span><span class="p">.</span><span class="nx">getPitch</span><span class="p">()</span> <span class="o">-</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;pan-left&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">viewer</span><span class="p">.</span><span class="nx">setYaw</span><span class="p">(</span><span class="nx">viewer</span><span class="p">.</span><span class="nx">getYaw</span><span class="p">()</span> <span class="o">-</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;pan-right&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">viewer</span><span class="p">.</span><span class="nx">setYaw</span><span class="p">(</span><span class="nx">viewer</span><span class="p">.</span><span class="nx">getYaw</span><span class="p">()</span> <span class="o">+</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;zoom-in&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">viewer</span><span class="p">.</span><span class="nx">setHfov</span><span class="p">(</span><span class="nx">viewer</span><span class="p">.</span><span class="nx">getHfov</span><span class="p">()</span> <span class="o">-</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;zoom-out&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">viewer</span><span class="p">.</span><span class="nx">setHfov</span><span class="p">(</span><span class="nx">viewer</span><span class="p">.</span><span class="nx">getHfov</span><span class="p">()</span> <span class="o">+</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;fullscreen&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">viewer</span><span class="p">.</span><span class="nx">toggleFullscreen</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
-</body>
-</html>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 
   </div>
   <div class="col-sm-3 col-sm-pull-9">
