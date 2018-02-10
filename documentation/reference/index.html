@@ -105,6 +105,11 @@ don&rsquo;t set this parameter.</p>
 <p>If set, the value is displayed as the panorama&rsquo;s author. If no author is
 desired, don&rsquo;t set this parameter.</p>
 
+<h3 id="strings-dictionary"><code>strings</code> (dictionary)</h3>
+
+<p>Allows user-facing strings to be changed / translated.
+See <code>defaultConfig.strings</code> definition in <code>pannellum.js</code> for more details.</p>
+
 <h3 id="basepath-string"><code>basePath</code> (string)</h3>
 
 <p>This specifies a base path to load the images from.</p>
@@ -153,9 +158,19 @@ to be activated by pressing a button. Defaults to <code>false</code>.</p>
 
 <p>If set to <code>false</code>, zooming with keyboard will be disabled. Defaults to <code>true</code>.</p>
 
-<h3 id="mousezoom-boolean"><code>mouseZoom</code> (boolean)</h3>
+<h3 id="mousezoom-boolean-or-string"><code>mouseZoom</code> (boolean or string)</h3>
 
-<p>If set to <code>false</code>, zooming with mouse wheel will be disabled. Defaults to <code>true</code>.</p>
+<p>If set to <code>false</code>, zooming with mouse wheel will be disabled. Defaults to <code>true</code>.
+Can also be set to <code>fullscreenonly</code>, in which case it is only enabled when the
+viewer is fullscreen.</p>
+
+<h3 id="draggable-boolean"><code>draggable</code> (boolean)</h3>
+
+<p>If set to <code>false</code>, mouse and touch dragging is disabled. Defaults to <code>true</code>.</p>
+
+<h3 id="disablekeyboardctrl-boolean"><code>disableKeyboardCtrl</code> (boolean)</h3>
+
+<p>If set to <code>true</code>, keyboard controls are disabled. Defaults to <code>false</code>.</p>
 
 <h3 id="showfullscreenctrl-boolean"><code>showFullscreenCtrl</code> (boolean)</h3>
 
@@ -209,10 +224,37 @@ affects the compass, it only has an effect if <code>compass</code> is set to <co
 
 <p>Specifies a URL for a preview image to display before the panorama is loaded.</p>
 
+<h3 id="previewtitle-string"><code>previewTitle</code> (string)</h3>
+
+<p>Specifies the title to be displayed while the load button is displayed.</p>
+
+<h3 id="previewauthor-string"><code>previewAuthor</code> (string)</h3>
+
+<p>Specifies the author to be displayed while the load button is displayed.</p>
+
 <h3 id="horizonpitch-and-horizonroll-number"><code>horizonPitch</code> and <code>horizonRoll</code> (number)</h3>
 
 <p>Specifies pitch / roll of image horizon, in degrees (for correcting
 non-leveled panoramas).</p>
+
+<h3 id="animationtimingfunction-function-api-only"><code>animationTimingFunction</code> (function) [API only]</h3>
+
+<p>This specifies a timing function to be used for animating movements such as
+when the <code>lookAt</code> method is called. The default timing function is
+<code>easeInOutQuad</code>. If a custom function is specified, it should take a number
+[0, 1] as its only argument and return a number [0, 1].</p>
+
+<h3 id="escapehtml-boolean"><code>escapeHTML</code> (boolean)</h3>
+
+<p>When true, HTML is escaped from configuration strings to help mitigate possible
+DOM XSS attacks. This is always <code>true</code> when using the standalone viewer since
+the configuration is provided via the URL; it defaults to <code>false</code> but can be
+set to <code>true</code> when using the API.</p>
+
+<h3 id="crossorigin-string"><code>crossOrigin</code> (string)</h3>
+
+<p>This specifies the type of CORS request used and can be set to either
+<code>anonymous</code> or <code>use-credentials</code>. Defaults to <code>anonymous</code>.</p>
 
 <h3 id="hotspots-array"><code>hotSpots</code> (array)</h3>
 
@@ -265,6 +307,10 @@ maintain the same direction with regard to north.</p>
 <h4 id="targethfov-number"><code>targetHfov</code> (number)</h4>
 
 <p>Specifies the HFOV of the target scene, in degrees.</p>
+
+<h4 id="id"><code>id</code></h4>
+
+<p>Specifies hot spot ID, for use with API&rsquo;s <code>removeHotSpot</code> function.</p>
 
 <h4 id="cssclass-string"><code>cssClass</code> (string)</h4>
 
@@ -412,6 +458,11 @@ these IDs are specific to each scene.</p>
 <p>Fired when a scene change is initiated. A <code>load</code> event will be fired when the
 new scene finishes loading. Passes scene ID string to handler.</p>
 
+<h2 id="scenechangefadedone"><code>scenechangefadedone</code></h2>
+
+<p>If a scene transition fade interval is specified, this event is fired when the
+fading is completed after changing scenes.</p>
+
 <h2 id="error"><code>error</code></h2>
 
 <p>Fired when an error occured. The error message string is passed to the
@@ -428,6 +479,14 @@ event listener.</p>
 <h2 id="mouseup"><code>mouseup</code></h2>
 
 <p>Fired when the mouse button is released. Passes <code>MouseEvent</code> to handler.</p>
+
+<h2 id="touchstart"><code>touchstart</code></h2>
+
+<p>Fired when a touch starts. Passes <code>TouchEvent</code> to handler.</p>
+
+<h2 id="touchend"><code>touchend</code></h2>
+
+<p>Fired when a touch ends. Passes <code>TouchEvent</code> to handler.</p>
 
   </div>
   <div class="col-sm-3 col-sm-pull-9">

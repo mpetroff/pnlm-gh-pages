@@ -112,6 +112,17 @@
 
 <p>Resize renderer (call after resizing container).</p>
 
+<h2 id="setpose">setPose</h2>
+
+<p>Set renderer horizon pitch and roll.</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>horizonPitch</code><br /></li>
+<li><code>horizonRoll</code><br /></li>
+</ul>
+
 <h2 id="render">render</h2>
 
 <p>Render new view of panorama.</p>
@@ -154,6 +165,18 @@
 <li><code>initialConfig</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong> Inital configuration for viewer.</li>
 </ul>
 
+<h2 id="isloaded">isLoaded</h2>
+
+<p>Checks whether or not a panorama is loaded.</p>
+
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong> <code>true</code> if a panorama is loaded, else <code>false</code></p>
+
+<h2 id="isloaded-1">isLoaded</h2>
+
+<p>Check if a panorama is loaded.</p>
+
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong> True if a panorama is loaded, else false</p>
+
 <h2 id="getpitch">getPitch</h2>
 
 <p>Returns the pitch of the center of the view.</p>
@@ -169,6 +192,8 @@
 <ul>
 <li><code>pitch</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong> Pitch in degrees</li>
 <li><code>animated</code> <strong>[(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)]</strong> Animation duration in milliseconds or false for no animation (optional, default <code>1000</code>)</li>
+<li><code>callback</code> <strong>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">function</a>]</strong> Function to call when animation finishes</li>
+<li><code>callbackArgs</code> <strong>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>]</strong> Arguments to pass to callback function</li>
 </ul>
 
 <p>Returns <strong><a href="#viewer">Viewer</a></strong> <code>this</code></p>
@@ -206,6 +231,8 @@
 <ul>
 <li><code>yaw</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong> Yaw in degrees [-180, 180]</li>
 <li><code>animated</code> <strong>[(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)]</strong> Animation duration in milliseconds or false for no animation (optional, default <code>1000</code>)</li>
+<li><code>callback</code> <strong>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">function</a>]</strong> Function to call when animation finishes</li>
+<li><code>callbackArgs</code> <strong>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>]</strong> Arguments to pass to callback function</li>
 </ul>
 
 <p>Returns <strong><a href="#viewer">Viewer</a></strong> <code>this</code></p>
@@ -243,6 +270,8 @@
 <ul>
 <li><code>hfov</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong> Horizontal field of view in degrees</li>
 <li><code>animated</code> <strong>[(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)]</strong> Animation duration in milliseconds or false for no animation (optional, default <code>1000</code>)</li>
+<li><code>callback</code> <strong>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">function</a>]</strong> Function to call when animation finishes</li>
+<li><code>callbackArgs</code> <strong>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>]</strong> Arguments to pass to callback function</li>
 </ul>
 
 <p>Returns <strong><a href="#viewer">Viewer</a></strong> <code>this</code></p>
@@ -277,6 +306,8 @@
 <li><code>yaw</code> <strong>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]</strong> Target yaw</li>
 <li><code>hfov</code> <strong>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]</strong> Target hfov</li>
 <li><code>animated</code> <strong>[(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)]</strong> Animation duration in milliseconds or false for no animation (optional, default <code>1000</code>)</li>
+<li><code>callback</code> <strong>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">function</a>]</strong> Function to call when animation finishes</li>
+<li><code>callbackArgs</code> <strong>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>]</strong> Arguments to pass to callback function</li>
 </ul>
 
 <p>Returns <strong><a href="#viewer">Viewer</a></strong> <code>this</code></p>
@@ -295,6 +326,42 @@
 
 <ul>
 <li><code>heading</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong> North offset in degrees</li>
+</ul>
+
+<p>Returns <strong><a href="#viewer">Viewer</a></strong> <code>this</code></p>
+
+<h2 id="gethorizonroll">getHorizonRoll</h2>
+
+<p>Returns the panorama&rsquo;s horizon roll.</p>
+
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong> Horizon roll in degrees</p>
+
+<h2 id="sethorizonroll">setHorizonRoll</h2>
+
+<p>Sets the panorama&rsquo;s horizon roll.</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>roll</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong> Horizon roll in degrees [-90, 90]</li>
+</ul>
+
+<p>Returns <strong><a href="#viewer">Viewer</a></strong> <code>this</code></p>
+
+<h2 id="gethorizonpitch">getHorizonPitch</h2>
+
+<p>Returns the panorama&rsquo;s horizon pitch.</p>
+
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong> Horizon pitch in degrees</p>
+
+<h2 id="sethorizonpitch">setHorizonPitch</h2>
+
+<p>Sets the panorama&rsquo;s horizon pitch.</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li><code>pitch</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong> Horizon pitch in degrees [-90, 90]</li>
 </ul>
 
 <p>Returns <strong><a href="#viewer">Viewer</a></strong> <code>this</code></p>
@@ -405,6 +472,12 @@
 
 <p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong> Configuration of current scene</p>
 
+<h2 id="getcontainer">getContainer</h2>
+
+<p>Get viewer&rsquo;s container element.</p>
+
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTMLElement</a></strong> Container <code>div</code> element</p>
+
 <h2 id="addhotspot">addHotSpot</h2>
 
 <p>Add a new hot spot.</p>
@@ -432,6 +505,30 @@
 </ul>
 
 <p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong> True if deletion is successful, else false</p>
+
+<h2 id="resize-1">resize</h2>
+
+<p>This method should be called if the viewer&rsquo;s container is resized.</p>
+
+<h2 id="isorientationsupported">isOrientationSupported</h2>
+
+<p>Check if device orientation control is supported.</p>
+
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong> True if supported, else false</p>
+
+<h2 id="stoporientation">stopOrientation</h2>
+
+<p>Stop using device orientation.</p>
+
+<h2 id="startorientation">startOrientation</h2>
+
+<p>Start using device orientation (does nothing if not supported).</p>
+
+<h2 id="isorientationactive">isOrientationActive</h2>
+
+<p>Check if device orientation control is currently activated.</p>
+
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong> True if active, else false</p>
 
 <h2 id="on">on</h2>
 
@@ -476,12 +573,15 @@
 <li><a href="#init">init</a></li>
 <li><a href="#destroy">destroy</a></li>
 <li><a href="#resize">resize</a></li>
+<li><a href="#setpose">setPose</a></li>
 <li><a href="#render">render</a></li>
 <li><a href="#isloading">isLoading</a></li>
 <li><a href="#getcanvas">getCanvas</a></li>
 </ul></li>
 <li><a href="#viewer">Viewer</a>
 <ul>
+<li><a href="#isloaded">isLoaded</a></li>
+<li><a href="#isloaded-1">isLoaded</a></li>
 <li><a href="#getpitch">getPitch</a></li>
 <li><a href="#setpitch">setPitch</a></li>
 <li><a href="#getpitchbounds">getPitchBounds</a></li>
@@ -497,6 +597,10 @@
 <li><a href="#lookat">lookAt</a></li>
 <li><a href="#getnorthoffset">getNorthOffset</a></li>
 <li><a href="#setnorthoffset">setNorthOffset</a></li>
+<li><a href="#gethorizonroll">getHorizonRoll</a></li>
+<li><a href="#sethorizonroll">setHorizonRoll</a></li>
+<li><a href="#gethorizonpitch">getHorizonPitch</a></li>
+<li><a href="#sethorizonpitch">setHorizonPitch</a></li>
 <li><a href="#startautorotate">startAutoRotate</a></li>
 <li><a href="#stopautorotate">stopAutoRotate</a></li>
 <li><a href="#getrenderer">getRenderer</a></li>
@@ -508,8 +612,14 @@
 <li><a href="#removescene">removeScene</a></li>
 <li><a href="#togglefullscreen">toggleFullscreen</a></li>
 <li><a href="#getconfig">getConfig</a></li>
+<li><a href="#getcontainer">getContainer</a></li>
 <li><a href="#addhotspot">addHotSpot</a></li>
 <li><a href="#removehotspot">removeHotSpot</a></li>
+<li><a href="#resize-1">resize</a></li>
+<li><a href="#isorientationsupported">isOrientationSupported</a></li>
+<li><a href="#stoporientation">stopOrientation</a></li>
+<li><a href="#startorientation">startOrientation</a></li>
+<li><a href="#isorientationactive">isOrientationActive</a></li>
 <li><a href="#on">on</a></li>
 <li><a href="#destroy-1">destroy</a></li>
 <li><a href="#off">off</a></li>
