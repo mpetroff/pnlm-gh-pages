@@ -78,8 +78,8 @@
 
     
 
-<p><link href="https://vjs.zencdn.net/5.4.6/video-js.css" rel="stylesheet" type="text/css" property="stylesheet">
-<script src="https://vjs.zencdn.net/5.4.6/video.js"></script>
+<p><link href="https://vjs.zencdn.net/7.1.0/video-js.css" rel="stylesheet" type="text/css" property="stylesheet">
+<script src="https://vjs.zencdn.net/7.1.0/video.js"></script>
 <script src="https://pannellum.org/js/videojs-pannellum-plugin.js"></script></p>
 
 <video id="panorama" class="video-js vjs-default-skin vjs-big-play-centered"
@@ -103,30 +103,30 @@ videojs('panorama', {
 </script>
 
 <h3 id="api">API</h3>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Pannellum Video Demo<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.pannellum.org/2.3/pannellum.css&quot;</span><span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.pannellum.org/2.3/pannellum.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://cdn.pannellum.org/2.4/pannellum.css&#34;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.pannellum.org/2.4/pannellum.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://vjs.zencdn.net/5.4.6/video-js.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span>
-      <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://vjs.zencdn.net/5.4.6/video.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/js/videojs-pannellum-plugin.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://vjs.zencdn.net/7.1.0/video-js.css&#34;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span>
+      <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/css&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://vjs.zencdn.net/7.1.0/video.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/js/videojs-pannellum-plugin.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">video</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;panorama&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;video-js vjs-default-skin vjs-big-play-centered&quot;</span>
-  <span class="na">controls</span> <span class="na">preload</span><span class="o">=</span><span class="s">&quot;none&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width:100%;height:400px;&quot;</span>
-  <span class="na">poster</span><span class="o">=</span><span class="s">&quot;/images/video/jfk-poster.jpg&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/images/video/jfk.webm&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/webm&quot;</span><span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/images/video/jfk.mp4&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/mp4&quot;</span><span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;vjs-no-js&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">video</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;panorama&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;video-js vjs-default-skin vjs-big-play-centered&#34;</span>
+  <span class="na">controls</span> <span class="na">preload</span><span class="o">=</span><span class="s">&#34;none&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width:100%;height:400px;&#34;</span>
+  <span class="na">poster</span><span class="o">=</span><span class="s">&#34;/images/video/jfk-poster.jpg&#34;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/images/video/jfk.webm&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;video/webm&#34;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/images/video/jfk.mp4&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;video/mp4&#34;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;vjs-no-js&#34;</span><span class="p">&gt;</span>
         To view this video please enable JavaScript, and consider upgrading to
-        a web browser that <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://videojs.com/html5-video-support/&quot;</span>
-        <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>supports HTML5 video<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        a web browser that <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://videojs.com/html5-video-support/&#34;</span>
+        <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>supports HTML5 video<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
 
@@ -139,9 +139,7 @@ videojs('panorama', {
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></div>
   </div>
   <div class="col-sm-3 col-sm-pull-9">
     <h4>

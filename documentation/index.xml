@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation on Pannellum</title>
+    <link>https://pannellum.org/documentation/</link>
+    <description>Recent content in Documentation on Pannellum</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://pannellum.org/documentation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A simple example</title>
+      <link>https://pannellum.org/documentation/examples/simple-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/simple-example/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>https://pannellum.org/documentation/api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/api/</guid>
+      <description>Renderer Creates a new panorama renderer.
+Parameters
+ container HTMLElement The container element for the renderer.  init Initialize renderer.
+Parameters
+ image (Image | Array | Object) Input image; format varies based on imageType. For equirectangular, this is an image; for cubemap, this is an array of images for the cube faces in the order [+z, +x, -z, -x, +y, -y]; for multires, this is a configuration object. imageType string The type of the image: equirectangular, cubemap, or multires.</description>
+    </item>
+    
+    <item>
+      <title>Auto load</title>
+      <link>https://pannellum.org/documentation/examples/auto-load/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/auto-load/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Auto rotate</title>
+      <link>https://pannellum.org/documentation/examples/auto-rotate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/auto-rotate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Compass</title>
+      <link>https://pannellum.org/documentation/examples/compass/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/compass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cube map</title>
+      <link>https://pannellum.org/documentation/examples/cube-map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/cube-map/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Custom controls</title>
+      <link>https://pannellum.org/documentation/examples/custom-controls/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/custom-controls/</guid>
+      <description>#panorama { width: 600px; height: 400px; } #controls { position: absolute; bottom: 0; z-index: 2; text-align: center; width: 100%; padding-bottom: 3px; } .ctrl { padding: 8px 5px; width: 30px; text-align: center; background: rgba(200, 200, 200, 0.8); display: inline-block; cursor: pointer; } .ctrl:hover { background: rgba(200, 200, 200, 1); }  &amp;#9650; &amp;#9660; &amp;#9664; &amp;#9654; &amp;plus; &amp;minus; &amp;#x2922;    // Create viewer viewer = pannellum.viewer(&#39;panorama&#39;, ﻿{ &#34;panorama&#34;: &#34;</description>
+    </item>
+    
+    <item>
+      <title>Custom hot spots</title>
+      <link>https://pannellum.org/documentation/examples/custom-hot-spots/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/custom-hot-spots/</guid>
+      <description>#panorama { width: 600px; height: 400px; } .custom-hotspot { height: 50px; width: 50px; background: #f00; } div.custom-tooltip span { visibility: hidden; position: absolute; border-radius: 3px; background-color: #fff; color: #000; text-align: center; max-width: 200px; padding: 5px 10px; margin-left: -220px; cursor: default; } div.custom-tooltip:hover span{ visibility: visible; } div.custom-tooltip:hover span:after { content: &#39;&#39;; position: absolute; width: 0; height: 0; border-width: 10px; border-style: solid; border-color: #fff transparent transparent transparent; bottom: -20px; left: -10px; margin: 0 50%; }    // Create viewer viewer = pannellum.</description>
+    </item>
+    
+    <item>
+      <title>Hot spots</title>
+      <link>https://pannellum.org/documentation/examples/hot-spots/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/hot-spots/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Imgur-hosted Image</title>
+      <link>https://pannellum.org/documentation/examples/imgur/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/imgur/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Initial view</title>
+      <link>https://pannellum.org/documentation/examples/initial-view/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/initial-view/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multiresolution panorama</title>
+      <link>https://pannellum.org/documentation/examples/multiresolution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/multiresolution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Overview</title>
+      <link>https://pannellum.org/documentation/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/overview/</guid>
+      <description>Quick and easy: If you just have a simple panorama that you want to display without anything fancy, read the simple tutorial.  Pannellum is built using WebGL and JavaScript, with a sprinkling of HTML5 and CSS3. It can run standalone or can be embedded using either an &amp;lt;iframe&amp;gt; or a JavaScript API. The standalone method, which is used for &amp;lt;iframe&amp;gt; embedding, is the easiest and simplest to use, but the JavaScript API is more powerful and provides tighter integration.</description>
+    </item>
+    
+    <item>
+      <title>Partial panorama</title>
+      <link>https://pannellum.org/documentation/examples/partial-panorama/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/partial-panorama/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Preview image</title>
+      <link>https://pannellum.org/documentation/examples/preview-image/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/preview-image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reference</title>
+      <link>https://pannellum.org/documentation/reference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/reference/</guid>
+      <description>URL Configuration Parameters URL parameters are used to configure Pannellum. If an equirectangular image is being used without some of Pannellum&amp;rsquo;s more advanced features, Pannellum can be configured with just URL parameters; else, a JSON configuration file needs to be used with the config.
+config Specifies the URL of a JSON configuration file.
+Other parameters A subset of the JSON configuration file options can be used as URL parameters. These include panorama, config, author, title, hfov, minHfov, maxHfov, pitch, minPitch, maxPitch, yaw, minYaw, maxYaw, haov, vaov, vOffset, autoLoad, autoRotate, firstScene, ignoreGPanoXMP, preview, and fallback.</description>
+    </item>
+    
+    <item>
+      <title>Title and author</title>
+      <link>https://pannellum.org/documentation/examples/title-author/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/title-author/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tour</title>
+      <link>https://pannellum.org/documentation/examples/tour/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/tour/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Video</title>
+      <link>https://pannellum.org/documentation/examples/video/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pannellum.org/documentation/examples/video/</guid>
+      <description>To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video   videojs(&#39;panorama&#39;, { plugins: { pannellum: {} } });  API &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Pannellum Video Demo&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://cdn.pannellum.org/2.4/pannellum.css&amp;#34;/&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;https://cdn.pannellum.org/2.4/pannellum.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;link href=&amp;#34;https://vjs.zencdn.net/7.1.0/video-js.css&amp;#34; rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;https://vjs.zencdn.net/7.1.0/video.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;/js/videojs-pannellum-plugin.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;video id=&amp;#34;panorama&amp;#34; class=&amp;#34;video-js vjs-default-skin vjs-big-play-centered&amp;#34; controls preload=&amp;#34;none&amp;#34; style=&amp;#34;width:100%;height:400px;&amp;#34; poster=&amp;#34;/images/video/jfk-poster.jpg&amp;#34; crossorigin=&amp;#34;anonymous&amp;#34;&amp;gt; &amp;lt;source src=&amp;#34;/images/video/jfk.webm&amp;#34; type=&amp;#34;video/webm&amp;#34;/&amp;gt; &amp;lt;source src=&amp;#34;/images/video/jfk.</description>
+    </item>
+    
+  </channel>
+</rss>
