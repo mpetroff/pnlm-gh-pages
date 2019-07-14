@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="https://pannellum.org/css/pygments.css">
 
   
-  <link rel="stylesheet" href="https://cdn.pannellum.org/2.4/pannellum.css"/>
-  <script type="text/javascript" src="https://cdn.pannellum.org/2.4/pannellum.js"></script>
+  <link rel="stylesheet" href="https://cdn.pannellum.org/2.5/pannellum.css"/>
+  <script type="text/javascript" src="https://cdn.pannellum.org/2.5/pannellum.js"></script>
   
 
   
@@ -375,6 +375,8 @@ Consider taking the Color Cycle Survey
 
 <p>Start auto rotation.</p>
 
+<p>Before starting rotation, the viewer is panned to the initial pitch.</p>
+
 <p><strong>Parameters</strong></p>
 
 <ul>
@@ -388,6 +390,10 @@ Consider taking the Color Cycle Survey
 <p>Stop auto rotation.</p>
 
 <p>Returns <strong><a href="#viewer">Viewer</a></strong> <code>this</code></p>
+
+<h2 id="stopmovement">stopMovement</h2>
+
+<p>Stops all movement.</p>
 
 <h2 id="getrenderer">getRenderer</h2>
 
@@ -507,6 +513,7 @@ Consider taking the Color Cycle Survey
 
 <ul>
 <li><code>hotSpotId</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The ID of the hot spot</li>
+<li><code>sceneId</code> <strong>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]</strong> Removes hot spot from specified scene if provided, else from current scene</li>
 </ul>
 
 <p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong> True if deletion is successful, else false</p>
@@ -608,6 +615,7 @@ Consider taking the Color Cycle Survey
 <li><a href="#sethorizonpitch">setHorizonPitch</a></li>
 <li><a href="#startautorotate">startAutoRotate</a></li>
 <li><a href="#stopautorotate">stopAutoRotate</a></li>
+<li><a href="#stopmovement">stopMovement</a></li>
 <li><a href="#getrenderer">getRenderer</a></li>
 <li><a href="#setupdate">setUpdate</a></li>
 <li><a href="#mouseeventtocoords">mouseEventToCoords</a></li>

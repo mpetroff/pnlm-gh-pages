@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="https://pannellum.org/css/pygments.css">
 
   
-  <link rel="stylesheet" href="https://cdn.pannellum.org/2.4/pannellum.css"/>
-  <script type="text/javascript" src="https://cdn.pannellum.org/2.4/pannellum.js"></script>
+  <link rel="stylesheet" href="https://cdn.pannellum.org/2.5/pannellum.css"/>
+  <script type="text/javascript" src="https://cdn.pannellum.org/2.5/pannellum.js"></script>
   
 
   
@@ -110,6 +110,12 @@ don&rsquo;t set this parameter.</p>
 <p>If set, the value is displayed as the panorama&rsquo;s author. If no author is
 desired, don&rsquo;t set this parameter.</p>
 
+<h3 id="authorurl-string"><code>authorURL</code> (string)</h3>
+
+<p>If set, the displayed author text is hyperlinked to this URL. If no author URL
+is desired, don&rsquo;t set this parameter. The <code>author</code> parameter must also be set
+for this parameter to have an effect.</p>
+
 <h3 id="strings-dictionary"><code>strings</code> (dictionary)</h3>
 
 <p>Allows user-facing strings to be changed / translated.
@@ -135,7 +141,8 @@ counter-clockwise, and negative is clockwise.</p>
 
 <p>Sets the delay, in milliseconds, to start automatically rotating the panorama
 after user activity ceases. This parameter only has an effect if the
-<code>autoRotate</code> parameter is set.</p>
+<code>autoRotate</code> parameter is set. Before starting rotation, the viewer is panned
+to the initial pitch.</p>
 
 <h3 id="autorotatestopdelay-number"><code>autoRotateStopDelay</code> (number)</h3>
 
@@ -173,6 +180,12 @@ viewer is fullscreen.</p>
 
 <p>If set to <code>false</code>, mouse and touch dragging is disabled. Defaults to <code>true</code>.</p>
 
+<h3 id="friction-number"><code>friction</code> (number)</h3>
+
+<p>Controls the &ldquo;friction&rdquo; that slows down the viewer motion after it is dragged
+and released. Higher values mean the motion stops faster. Should be set
+(0.0, 1.0]; defaults to 0.15.</p>
+
 <h3 id="disablekeyboardctrl-boolean"><code>disableKeyboardCtrl</code> (boolean)</h3>
 
 <p>If set to <code>true</code>, keyboard controls are disabled. Defaults to <code>false</code>.</p>
@@ -186,6 +199,10 @@ the fullscreen API.</p>
 <h3 id="showcontrols-boolean"><code>showControls</code> (boolean)</h3>
 
 <p>If set to <code>false</code>, no controls are displayed. Defaults to <code>true</code>.</p>
+
+<h3 id="touchpanspeedcoefffactor-number"><code>touchPanSpeedCoeffFactor</code> (number)</h3>
+
+<p>Adjusts panning speed from touch inputs. Defaults to <code>1</code>.</p>
 
 <h3 id="yaw-number"><code>yaw</code> (number)</h3>
 
@@ -213,7 +230,15 @@ Defaults to <code>undefined</code>, so the viewer center can reach <code>-90</co
 <h3 id="minhfov-and-maxhfov-number"><code>minHfov</code> and <code>maxHfov</code> (number)</h3>
 
 <p>Sets the minimum / maximum horizontal field of view, in degrees, that the
-viewer can be set to. Defaults to <code>50</code> / <code>120</code>.</p>
+viewer can be set to. Defaults to <code>50</code> / <code>120</code>. Unless the <code>multiResMinHfov</code>
+parameter is set to <code>true</code>, the <code>minHfov</code> parameter is ignored for
+<code>multires</code> panoramas.</p>
+
+<h3 id="multiresminhfov-boolean"><code>multiResMinHfov</code> (boolean)</h3>
+
+<p>When set to <code>false</code>, the <code>minHfov</code> parameter is ignored for <code>multires</code>
+panoramas; an automatically calculated minimum horizontal field of view is used
+instead. Defaults to <code>false</code>.</p>
 
 <h3 id="compass-boolean"><code>compass</code> (boolean)</h3>
 
@@ -261,9 +286,9 @@ set to <code>true</code> when using the API.</p>
 <p>This specifies the type of CORS request used and can be set to either
 <code>anonymous</code> or <code>use-credentials</code>. Defaults to <code>anonymous</code>.</p>
 
-<h3 id="hotspots-array"><code>hotSpots</code> (array)</h3>
+<h3 id="hotspots-object"><code>hotSpots</code> (object)</h3>
 
-<p>This specifies an array of hot spots that can be links to other scenes,
+<p>This specifies a dictionary of hot spots that can be links to other scenes,
 information, or external links. Each array element has the following properties.</p>
 
 <h4 id="pitch-number-1"><code>pitch</code> (number)</h4>
@@ -290,6 +315,11 @@ spot.</p>
 <p>If specified for an <code>info</code> hot spot, the hot spot links to the specified URL.
 Not applicable for <code>scene</code> hot spots.</p>
 
+<h4 id="attributes-dict"><code>attributes</code> (dict)</h4>
+
+<p>Specifies URL&rsquo;s link attributes. If not set, the <code>target</code> attribute is set to
+<code>_blank</code>, to open link in new tab to avoid opening in viewer frame / page.</p>
+
 <h4 id="sceneid-string"><code>sceneId</code> (string)</h4>
 
 <p>Specifies the ID of the scene to link to for <code>scene</code> hot spots. Not applicable
@@ -311,7 +341,9 @@ maintain the same direction with regard to north.</p>
 
 <h4 id="targethfov-number"><code>targetHfov</code> (number)</h4>
 
-<p>Specifies the HFOV of the target scene, in degrees.</p>
+<p>Specifies the HFOV of the target scene, in degrees. Can also be set to <code>same</code>,
+which uses the current HFOV of the current scene as the initial HFOV of the
+target scene.</p>
 
 <h4 id="id"><code>id</code></h4>
 
@@ -345,6 +377,28 @@ the mouse button is clicked. Defaults to <code>false</code>.</p>
 scenes. Not defined by default. Only applicable for tours. Only works with
 WebGL renderer.</p>
 
+<h3 id="capturedkeynumbers-array"><code>capturedKeyNumbers</code> (array)</h3>
+
+<p>Specifies the key numbers that are captured in key events. Defaults to the
+standard keys that are used by the viewer.</p>
+
+<h3 id="backgroundcolor-number-number-number"><code>backgroundColor</code> ([number, number, number])</h3>
+
+<p>Specifies an array containing RGB values [0, 1] that sets the background color
+for areas where no image data is available. Defaults to <code>[0, 0, 0]</code> (black).
+For partial <code>equirectangular</code> panoramas this applies to areas past the edges of
+the defined rectangle. For <code>multires</code> and <code>cubemap</code> (including fallback) panoramas
+this applies to areas corresponding to missing tiles or faces.</p>
+
+<h3 id="avoidshowingbackground-boolean"><code>avoidShowingBackground</code> (boolean)</h3>
+
+<p>If set to <code>true</code>, prevent displaying out-of-range areas of a partial panorama
+by constraining the yaw and the field-of-view. Even at the corners and edges
+of the canvas only areas actually belonging to the image
+(i.e., within [<code>minYaw</code>, <code>maxYaw</code>] and [<code>minPitch</code>, <code>maxPitch</code>]) are shown,
+thus setting the <code>backgroundColor</code> option is not needed if this option is set.
+Defaults to <code>false</code>.</p>
+
 <h2 id="equirectangular-specific-options"><code>equirectangular</code> specific options</h2>
 
 <h3 id="panorama-string"><code>panorama</code> (string)</h3>
@@ -376,11 +430,6 @@ and the equirectangular image is not cropped symmetrically.</p>
 <p>If set to <code>true</code>, any embedded Photo Sphere XMP data will be ignored; else,
 said data will override any existing settings. Defaults to <code>false</code>.</p>
 
-<h3 id="backgroundcolor-number-number-number"><code>backgroundColor</code> ([number, number, number])</h3>
-
-<p>Specifies an array containing RGB values [0, 1] that sets the background color
-shown past the edges of a partial panorama. Defaults to <code>[0, 0, 0]</code> (black).</p>
-
 <h2 id="cubemap-specific-options"><code>cubemap</code> specific options</h2>
 
 <h3 id="cubemap"><code>cubeMap</code></h3>
@@ -388,7 +437,7 @@ shown past the edges of a partial panorama. Defaults to <code>[0, 0, 0]</code> (
 <p>This is an array of URLs for the six cube faces in the order front, right,
 back, left, up, down. These are relative to <code>basePath</code> if it is set, else they
 are relative to the location of <code>pannellum.htm</code>. Absolute URLs can also be
-used.</p>
+used. Partial cubemap images may be specified by giving <code>null</code> instead of a URL.</p>
 
 <h2 id="multires-specific-options"><code>multires</code> specific options</h2>
 
@@ -442,6 +491,12 @@ tiles were created from.</p>
 <p>The panorama source is considered dynamic when this is set to <code>true</code>. Defaults
 to <code>false</code>. This should be set to <code>true</code> for video.</p>
 
+<h3 id="dynamicupdate-boolean"><code>dynamicUpdate</code> (boolean)</h3>
+
+<p>For dynamic content, viewer will start automatically updating when set to
+<code>true</code>. Defaults to <code>false</code>. If the updates are controlled via the <code>setUpdate</code>
+method, as with the Video.js plugin, this should be set to <code>false</code>.</p>
+
 <h2 id="additional-information-for-tour-configuration-files">Additional information for tour configuration files</h2>
 
 <p>A tour configuration file contains two top level properties, <code>default</code> and
@@ -463,10 +518,23 @@ these IDs are specific to each scene.</p>
 <p>Fired when a scene change is initiated. A <code>load</code> event will be fired when the
 new scene finishes loading. Passes scene ID string to handler.</p>
 
+<h2 id="fullscreenchange"><code>fullscreenchange</code></h2>
+
+<p>Fired when browser fullscreen status changed. Passes status boolean to handler.</p>
+
+<h2 id="zoomchange"><code>zoomchange</code></h2>
+
+<p>Fired when scene hfov update. Passes new HFOV value to handler.</p>
+
 <h2 id="scenechangefadedone"><code>scenechangefadedone</code></h2>
 
 <p>If a scene transition fade interval is specified, this event is fired when the
 fading is completed after changing scenes.</p>
+
+<h2 id="animatefinished"><code>animatefinished</code></h2>
+
+<p>Fired when any movements / animations finish, i.e. when the renderer stops
+rendering new frames. Passes final pitch, yaw, and HFOV values to handler.</p>
 
 <h2 id="error"><code>error</code></h2>
 
