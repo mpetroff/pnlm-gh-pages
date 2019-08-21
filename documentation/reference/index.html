@@ -366,6 +366,13 @@ spot tooltip DOM instead of the default function. The contents of
 for the hot spot&rsquo;s <code>click</code> event. The event object and the contents of
 <code>clickHandlerArgs</code> are passed to the function as arguments.</p>
 
+<h4 id="scale-boolean"><code>scale</code> (boolean)</h4>
+
+<p>When <code>true</code>, the hot spot is scaled to match changes in the field of view,
+relative to the initial field of view. Note that this does not account for
+changes in local image scale that occur due to distortions within the viewport.
+Defaults to <code>false</code>.</p>
+
 <h3 id="hotspotdebug-boolean"><code>hotSpotDebug</code> (boolean)</h3>
 
 <p>When <code>true</code>, the mouse pointer&rsquo;s pitch and yaw are logged to the console when
