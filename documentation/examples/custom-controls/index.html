@@ -90,6 +90,7 @@
     text-align: center;
     width: 100%;
     padding-bottom: 3px;
+    pointer-events: none;
 }
 .ctrl {
     padding: 8px 5px;
@@ -98,6 +99,7 @@
     background: rgba(200, 200, 200, 0.8);
     display: inline-block;
     cursor: pointer;
+    pointer-events: auto;
 }
 .ctrl:hover {
     background: rgba(200, 200, 200, 1);
@@ -154,8 +156,8 @@ document.getElementById('fullscreen').addEventListener('click', function(e) {
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Custom controls<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://cdn.pannellum.org/2.3/pannellum.css&#34;</span><span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.pannellum.org/2.3/pannellum.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
     <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
     <span class="p">#</span><span class="nn">panorama</span> <span class="p">{</span>
